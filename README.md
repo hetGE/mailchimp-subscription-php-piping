@@ -2,11 +2,20 @@ mailchimp-subscription-piping-php
 =================================
 Subscribe new users automatically to your MailChimp[*][MC] list by using e-mail piping
  
+
 Work flow
 ---------
 * Processes the received e-mail message and parses the name, surname and from address.
 * Registers the user to the newsletter by sending the data via MailChimp API.
-* Writes log files mailchimp.log and emails.log (optional, see config) for diagnostics.
+* Writes log files `mailchimp.log` (logs subscription info) and `emails.log` (optional, see configuration) for diagnostics.
+
+
+Usage
+-----
+* Edit the `config.inc.php` and add your MailChimp API key and list ID.
+* On your server, create a new directory (preferably outside `public_html`) and upload the PHP files.
+* Setup a pipe to the script `| /home/user/script_dir/mailchimp.php`. This maybe slightly different depending on your host. Please check the docs.
+* If you don't want to write a detailed log file including the e-mail body, in `mailchimp.php`, set `$detailedLogging` to `false`.
 
 
 Important Notice
@@ -27,7 +36,7 @@ You definitely don't want that.
 
 This script uses the following:
 -------------------------------
-* [PlancakeEmailParser][PcEP] by Danyuki Software Limited.
+* [PlancakeEmailParser][PcEP] by Danyuki Software Limited
 * [MailChimp API 1.3][MCAPI] and [MCAPI PHP Wrapper 1.3.2][MCAPI-PHP]
 
 --
