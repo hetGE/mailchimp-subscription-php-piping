@@ -1,5 +1,5 @@
-mailchimp-subscription-piping-php
-=================================
+Automate MailChimp Subscription
+===============================
 Subscribe new users automatically to your MailChimp[*][MC] list by using e-mail piping
  
 
