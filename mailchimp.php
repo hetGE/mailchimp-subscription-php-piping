@@ -120,8 +120,8 @@ $retval = $api->listSubscribe($listId, $emailFromAddress, $merge_vars, 'html', f
 
 if ($api->errorCode){
 	$mcLogMessage = "Unable to load listSubscribe()!\n";
-	$mcLogMessage = $errorLog . "\tCode=".$api->errorCode."\n";
-	$mcLogMessage = $errorLog . "\tMsg=".$api->errorMessage;
+	$mcLogMessage = $mcLogMessage . "Code=".$api->errorCode."\n";
+	$mcLogMessage = $mcLogMessage . "Msg=".$api->errorMessage;
 } else {
     $mcLogMessage = "User successfully subscribed to the newsletter.";
 }
