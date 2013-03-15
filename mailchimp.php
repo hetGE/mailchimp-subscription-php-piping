@@ -94,11 +94,8 @@ fclose($sock);
 $emailParser = new PlancakeEmailParser($email);
 
 $emailFromFullName = $emailParser->getFromName();
-if (preg_match ("/^.+ /", $emailFromFullName, $match)) $emailFromFirstName = $match[0];
-if (preg_match ("/[^ ]*$/", $emailFromFullName, $match)) $emailFromSurname = $match[0];	
-
-if (!$emailFromFirstName) $emailFromFirstName = "UNDEFINED";
-if (!$emailFromLastName) $emailFromLastName = "UNDEFINED";
+if (preg_match ("/^.+ /", $emailFromFullName, $match)) $emailFromFirstName = $match[0] ? $match[0] : "UNDEFINED";
+if (preg_match ("/[^ ]*$/", $emailFromFullName, $match)) $emailFromSurname = $match[0] ? $match[0] : "UNDEFINED";
 
 $emailFromAddress = $emailParser->getFromAddress();
 $emailTo = $emailParser->getTo();
