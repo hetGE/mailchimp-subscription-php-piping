@@ -1,7 +1,7 @@
 Automate MailChimp Subscription
 ===============================
 Subscribe new users automatically to your MailChimp[*][MC] list by using e-mail piping
- 
+
 
 Work flow
 ---------
@@ -14,8 +14,9 @@ Usage
 -----
 * Edit the `config.inc.php` and add your MailChimp API key and list ID.
 * On your server, create a new directory (preferably outside `public_html`) and upload the PHP files.
-* Setup a pipe to the script `| /home/user/script_dir/mailchimp.php`. This maybe slightly different depending on your host. Please check the docs.
+* Setup a pipe to the script `| /home/user/script_dir/mailchimp.php`. This maybe slightly different depending on your hosting provider. Please check the docs.
 * If you don't want to write a detailed log file including the e-mail body, in `mailchimp.php`, set `$detailedLogging` to `false`.
+* Do not forget to make `mailchimp.php` script executable. Something like `chmod 755 mailchimp.php` should do it.
 
 
 Important Notice
