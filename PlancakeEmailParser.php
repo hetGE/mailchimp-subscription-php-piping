@@ -366,8 +366,11 @@ class PlancakeEmailParser {
         {
             throw new Exception("Couldn't find the sender of the email");
         }
+        
     	if (!preg_match('/\"([^\"]+)\" <([^>]+)>/', $this->rawFields['from'], $matches)) {
-			(preg_match('/([^<]+) <([^>]+)>/', $this->rawFields['from'], $matches));
+			if (!preg_match('/([^<]+) <([^>]+)>/', $this->rawFields['from'], $matches)) {
+				$matches = array("UNDEFINED", "UNDEFINED", $this->rawFields['from']);
+			}
 		}
         return $matches[$returnIndex];
     }
