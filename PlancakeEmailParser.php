@@ -122,13 +122,15 @@ class PlancakeEmailParser {
     /**
      *
      * @return string (in UTF-8 format)
-     * @throws Exception if a subject header is not found
+     * --@throws Exception if a subject header is not found
+     * instead, returns "UNDEFINED"
      */
     public function getSubject()
     {
         if (!isset($this->rawFields['subject']))
         {
-            throw new Exception("Couldn't find the subject of the email");
+            //throw new Exception("Couldn't find the subject of the email");
+            return "UNDEFINED";
         }
         
         $ret = '';
